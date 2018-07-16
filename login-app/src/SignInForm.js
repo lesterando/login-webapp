@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Form, Button, ControlLabel } from 'react-bootstrap';
 import './SignInForm.css';
 
-var email_regex_format = new RegExp("^([a-zA-Z0-9!#$%&'*+-/=?^_`{|}~.]{2,}[@]{1}[a-zA-Z0-9!#$%&'*+-/=?^_`{|}~.]{2,}[.]{1}[a-zA-Z0-9]{2,})$");
+var email_regex_format = new RegExp("^([a-zA-Z0-9!#$%&'*+-/=?^_`{|}~]{1,}[@]{1}[a-zA-Z0-9!#$%&'*+-/=?^_`{|}~]{1,}[.]{1}[a-zA-Z0-9]{2,})$");
 
 class SignInForm extends Component {
 
@@ -112,7 +112,7 @@ class SignInForm extends Component {
           <Form onSubmit={this.handleSubmitClick}>
             <div className="form-group">
               <ControlLabel>Email</ControlLabel>
-              <input type="text" name="email" className="form-control" placeholder="Input email address" value={this.state.email} onChange={this.handleEmailInput} />
+              <input type="email" name="email" className="form-control" placeholder="Input email address" value={this.state.email} onChange={this.handleEmailInput} />
               <span className="help-block error-warning"><small>{this.state.emailErrorMessage}</small></span>
             </div>
             <div className="form-group">
